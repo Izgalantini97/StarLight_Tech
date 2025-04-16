@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento</title>
+    <link rel="stylesheet" href="CSS/orcamento.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="JavaScript/orcamento.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">StarLight Tech<span>.</span></div>
+        <input type="checkbox" id="toggler">
+        <label for="toggler" class="fa-bars">&#9776;</label>
+        <nav class="navbar">
+            <a href="index.html">Cadastro</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="orcamento.html">Orçamento</a>
+            <a href="registros.html">Registros</a>
+        </nav>
+    </header>
+
+    <main class="orcamento-container">
+        <section class="orcamento">
+            <h2>Gerar Orçamento</h2>
+            <form id="orcamentoForm">
+                <div class="form-group">
+                    <label for="cliente">Selecione o Cliente:</label>
+                    <select id="cliente" required>
+                        <option value="" disabled selected>Selecione um cliente</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nomeCliente">Nome do Cliente:</label>
+                    <input type="text" id="nomeCliente" placeholder="Nome do Cliente" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailCliente">Email:</label>
+                    <input type="email" id="emailCliente" placeholder="Email do Cliente" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefoneCliente">Telefone:</label>
+                    <input type="text" id="telefoneCliente" placeholder="Telefone do Cliente" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="enderecoCliente">Endereço:</label>
+                    <input type="text" id="enderecoCliente" placeholder="Endereço do Cliente" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="numeroCliente">Número:</label>
+                    <input type="text" id="numeroCliente" placeholder="Número da Casa" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="cpfCnpjCliente">CPF/CNPJ:</label>
+                    <input type="text" id="cpfCnpjCliente" placeholder="CPF ou CNPJ do Cliente" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicosCliente">Serviços:</label>
+                    <textarea id="servicosCliente" placeholder="Serviços do Cliente" readonly></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="produtosCliente">Produtos:</label>
+                    <textarea id="produtosCliente" placeholder="Produtos do Cliente" readonly></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="pagamento">Forma de Pagamento:</label>
+                    <select id="pagamento" required>
+                        <option value="" disabled selected>Selecione a forma de pagamento</option>
+                        <option value="Cartão de Crédito">Cartão de Crédito</option>
+                        <option value="Boleto">Boleto</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Pix">Pix</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="totalOrcamento">Total do Orçamento:</label>
+                    <input type="text" id="totalOrcamento" placeholder="R$ 0,00" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="statusPagamento">Status do Pagamento:</label>
+                    <select id="statusPagamento" required>
+                        <option value="" disabled selected>Selecione o status</option>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Pago">Pago</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-primary">Gerar Orçamento</button>
+            </form>
+            <button id="baixarPDF" class="btn-pdf" type="button" style="display: none;">Baixar PDF</button>
+           
+        </section>
+    </main>
+
+</body>
+
+</html>

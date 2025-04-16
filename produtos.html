@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/produtos.css">
+    <script src="JavaScript/produtos.js" defer></script>
+    <title>Cadastro de Produtos</title>
+</head>
+<body>
+    <header>
+        <div class="logo">StarLight Tech<span>.</span></div>
+        <input type="checkbox" id="toggler">
+        <label for="toggler" class="fa-bars">&#9776;</label>
+        <nav class="navbar">
+            <a href="index.html">Cadastro</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="orcamento.html">Orçamento</a>
+            <a href="registros.html">Registros</a>
+        </nav>
+    </header>
+
+    <section class="cadastro-produtos">
+        <h2>Cadastro de Produtos</h2>
+        <div class="formulario">
+            <input type="text" id="pesquisaCliente" placeholder="Pesquisar Cliente (Código ou Nome)...">
+            <div id="clientesEncontrados" class="clientes-encontrados"></div>
+
+        
+
+            <input type="text" id="codigoCliente" placeholder="Código do Cliente" readonly>
+            <input type="text" id="nomeCliente" placeholder="Nome do Cliente" readonly>
+            <input type="text" id="nomeProduto" placeholder="Nome do Produto">
+            <textarea id="descricaoProduto" placeholder="Descrição do Produto"></textarea>
+            <input type="number" id="precoProduto" placeholder="Valor (R$)">
+            <button id="registrarProduto">Registrar Produto</button>
+        </div>
+
+        <section class="produtos-registrados">
+            <h2>Produtos Registrados</h2>
+
+            
+        <div class="checkboxes">
+            <label for="mostrarAtivos">Mostrar Ativos</label>
+            <input type="checkbox" id="mostrarAtivos" checked>
+            <label for="mostrarInativos">Mostrar Inativos</label>
+            <input type="checkbox" id="mostrarInativos">
+        </div>
+
+            <input type="text" id="pesquisaProduto" placeholder="Pesquisar Produtos (Produto ou Código)...">
+
+            <div class="table-container">
+                <table id="produtosList">
+                    <thead>
+                        <tr>
+                            <th>Código do Cliente</th>
+                            <th>Nome do Cliente</th>
+                            <th>Nome do Produto</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os produtos serão adicionados aqui dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+
+    
+</body>
+</html>

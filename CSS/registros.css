@@ -1,0 +1,421 @@
+:root {
+    --text-color: #332B2E;
+    --link-color: #753B51;
+    --button-color: #F4005D;
+    --button-hover-color: #A0355E;
+    --thead-color: #CA2262;
+    --border-radius: 0.8rem;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f9fa;
+    padding-top: 6rem;
+    overflow-x: hidden; /* Evita a rolagem horizontal */
+}
+
+header {
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: bolder;
+}
+
+.logo span {
+    color: var(--button-color);
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: #666;
+}
+
+.navbar a:hover {
+    color: var(--link-color);
+}
+
+#toggler {
+    display: none;
+}
+
+.label-toggler {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+.registros {
+    padding: 4rem 9%;
+    text-align: center;
+    width: 100%;
+}
+
+.registros h2 {
+    font-size: 3.2rem; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Define o peso da fonte como bold */
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 0.1rem; /* Adiciona espaçamento entre as letras */
+    border-bottom: 2px solid var(--button-color); /* Adiciona uma borda inferior */
+    display: inline-block; /* Define o display como inline-block */
+    padding-bottom: 0.5rem; /* Adiciona padding inferior */
+}
+
+.checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.checkboxes input[type="checkbox"] {
+    margin-left: 0.5rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--button-color);
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.search-bar input {
+    width: 50%;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.table-container {
+    overflow-x: auto; /* Adiciona rolagem horizontal à tabela */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 2rem;
+    table-layout: auto; /* Ajusta o layout da tabela para auto */
+}
+
+thead {
+    background: var(--thead-color);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+th, td {
+    padding: 1rem; /* Ajusta o padding para tornar a tabela mais espaçosa */
+    text-align: left;
+    font-size: 1.4rem; /* Mantém o tamanho da fonte */
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    white-space: nowrap;
+}
+
+td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    padding: 0.6rem 1rem; /* Reduz o padding dos botões */
+    font-size: 1.2rem; /* Reduz o tamanho da fonte dos botões */
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.editar {
+    background: #007bff;
+    color: white;
+}
+
+.excluir {
+    background: #dc3545;
+    color: white;
+}
+
+.inativar {
+    background: #ffc107;
+    color: white;
+}
+ 
+.detalhes {
+    background: #17a2b8; /* Cor azul clara */
+    color: white;
+}
+
+.detalhes:hover {
+    background: #117a8b; /* Cor mais escura ao passar o mouse */
+}
+
+.editar:hover {
+    background: #0056b3;
+}
+
+.excluir:hover {
+    background: #a71d2a;
+}
+
+.inativar:hover {
+    background: #e0a800;
+}
+
+tr:hover {
+    background: rgba(155, 2, 2, 0.08);
+}
+
+tr.inativo {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com mais transparência */
+    backdrop-filter: blur(8px); /* Aumenta o efeito de desfoque no fundo */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+    width: 50%;
+    max-width: 600px;
+    animation: fadeIn 0.4s ease-in-out;
+    position: relative;
+    border: 1px solid #ddd; /* Adiciona uma borda sutil */
+}
+
+.modal-content h2 {
+    margin-bottom: 2rem;
+    font-size: 2.8rem; /* Aumenta o tamanho do título */
+    color: var(--text-color); /* Usa a cor do botão para destaque */
+    text-align: center;
+    border-bottom: 3px solid var(--button-color); /* Borda inferior mais grossa */
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem; /* Aumenta o espaçamento entre letras */
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: #333; /* Cor mais visível */
+    font-size: 2.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: var(--button-color); /* Cor do botão ao passar o mouse */
+    text-decoration: none;
+}
+
+.detalhes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Aumenta o espaçamento entre os grupos de informações */
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.detalhes-container .info-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem; /* Aumenta o padding */
+    background: #f4f4f4; /* Fundo mais claro */
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+}
+
+.detalhes-container .info-group span {
+    font-weight: bold;
+    color: var(--text-color); /* Destaque para os títulos */
+    font-size: 1.8rem; /* Aumenta o tamanho da fonte */
+}
+
+.detalhes-container .info-group p {
+    margin: 0;
+    color: #555; /* Cor mais suave para o texto */
+    font-size: 1.6rem;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+
+    .label-toggler {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background: #eee;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    #toggler:checked ~ .navbar {
+        display: flex;
+    }
+
+    .registros {
+        padding: 2rem 5%;
+    }
+
+    .registros h2 {
+        font-size: 2.4rem; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    .checkboxes {
+        flex-direction: row; /* Alinha os checkboxes em linha */
+        flex-wrap: wrap; /* Permite que os checkboxes quebrem para a próxima linha, se necessário */
+        justify-content: center; /* Centraliza os checkboxes */
+        gap: 1rem; /* Mantém o espaçamento entre os checkboxes */
+    }
+
+    .search-bar input {
+        width: 80%;
+    }
+
+    .table-container {
+        overflow-x: auto; /* Adiciona rolagem horizontal à tabela */
+    }
+
+    table {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte para telas menores */
+    }
+
+    th, td {
+        padding: 0.6rem; /* Reduz o padding para telas menores */
+    }
+
+    td:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 90%; /* Ajusta o tamanho para telas menores */
+        padding: 2rem;
+    }
+
+    .modal-content h2 {
+        font-size: 2.4rem; /* Reduz o tamanho do título */
+    }
+
+    .detalhes-container {
+        gap: 1.5rem; /* Ajusta o espaçamento entre os grupos */
+    }
+
+    .detalhes-container .info-group {
+        flex-direction: column; /* Exibe os detalhes em uma única coluna */
+        align-items: flex-start;
+    }
+
+    .detalhes-container .info-group span {
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+
+
+

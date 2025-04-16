@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros de Clientes</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/registros.css">
+    <script src="JavaScript/registros.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">StarLight Tech<span>.</span></div>
+        <input type="checkbox" id="toggler">
+        <label for="toggler" class="fa-bars">&#9776;</label>
+        <nav class="navbar">
+            <a href="index.html">Cadastro</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="orcamento.html">Orçamento</a>
+            <a href="registros.html">Registros</a>
+        </nav>
+    </header>
+    <!-- Registros de Clientes -->
+    <section class="registros">
+        <h2>Registros de Clientes</h2>
+        <div class="checkboxes">
+            <label for="mostrarAtivos">Mostrar Ativos</label>
+            <input type="checkbox" id="mostrarAtivos" checked>
+            <label for="mostrarInativos">Mostrar Inativos</label>
+            <input type="checkbox" id="mostrarInativos">
+        </div>
+        <div class="search-bar">
+            <input type="text" id="pesquisaCliente" placeholder="Pesquisar Cliente...">
+        </div>
+        <div class="table-container">
+            <div id="clientesList"></div>
+        </div>
+    </section>
+
+    <div id="modalDetalhes" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Detalhes do Cliente</h2>
+            <div id="detalhesCliente" class="detalhes-container">
+                <!-- Os detalhes do cliente serão preenchidos dinamicamente -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

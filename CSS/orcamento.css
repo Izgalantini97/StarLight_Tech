@@ -1,0 +1,264 @@
+:root {
+  --text-color: #332B2E;
+  --link-color: #753B51;
+  --button-color: #F4005D;
+  --button-hover-color: #A0355E;
+  --thead-color: #CA2262;
+  --background-light: #f4f4f4;
+  --text-light: #666;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background-light);
+  padding-top: 6rem;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+header {
+  background: #fff;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 3rem;
+  color: #333;
+  font-weight: bolder;
+}
+
+.logo span {
+  font-size: 3rem;
+  color: var(--button-color);
+}
+
+.navbar {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar a {
+  font-size: 1.8rem;
+  color: var(--text-light);
+}
+
+.navbar a:hover {
+  color: var(--link-color);
+}
+
+#toggler {
+  display: none;
+}
+
+.fa-bars {
+  font-size: 3rem;
+  color: var(--button-color);
+  cursor: pointer;
+  display: none;
+}
+
+.orcamento-container {
+  max-width: 900px;
+  margin: 8rem auto 2rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 90%;
+}
+
+.orcamento {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: var(--border-radius);
+
+}
+
+.orcamento h2 {
+   font-size: 3.2rem; /* Aumenta o tamanho da fonte */
+     font-weight: bold; /* Define o peso da fonte como bold */
+     color: var(--text-color);
+     margin-bottom: 3rem;
+     text-align: center;
+     text-transform: uppercase; /* Transforma o texto em maiúsculas */
+     letter-spacing: 0.1rem; /* Adiciona espaçamento entre as letras */
+     border-bottom: 2px solid var(--button-color); /* Adiciona uma borda inferior */
+     display: inline-block; /* Define o display como inline-block */
+     padding-bottom: 0.5rem; /* Adiciona padding inferior */
+}
+
+.form-group {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+
+}
+
+select,
+button,
+input,
+textarea {
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background: #fff;
+  color: var(--text-color);
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.actions .btn-secondary {
+  background: var(--button-color);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 1.6rem;
+}
+
+.actions .btn-secondary:hover {
+  background: var(--button-hover-color);
+}
+
+.btn-primary {
+  background: var(--button-color);
+  color: #fff;
+  padding: 1.2rem 2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+.btn-primary:hover {
+  background: var(--button-hover-color);
+}
+
+.orcamento-resumo {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: var(--border-radius);
+  font-size: 1.4rem;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+  .btn-pdf {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--button-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.btn-pdf:hover {
+  background: var(--button-hover-color);
+}
+
+/* Estilo para o select de status de pagamento */
+#statusPagamento {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+#statusPagamento:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#baixarPDF {
+    display: none; /* Oculta o botão inicialmente */
+}
+
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+  }
+
+  .fa-bars {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background: #eee;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  #toggler:checked ~ .navbar {
+    display: flex;
+  }
+}

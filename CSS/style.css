@@ -1,0 +1,215 @@
+:root {
+
+  --text-color:#332B2E;
+  --link-color:#753B51 ;
+  --button-color: #F4005D;
+  --button-hover-color:#A0355E ;
+  --thead-color:#CA2262 ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f4f4f4;
+  padding-top: 6rem;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+header {
+  background: #fff;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 3rem;
+  color: #333;
+  font-weight: bolder;
+}
+
+.logo span {
+  font-size: 3rem;
+  color: var(--button-color);
+}
+
+.navbar {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar a {
+  font-size: 1.8rem;
+  color: #666;
+}
+
+.navbar a:hover {
+  color: var(--link-color);
+}
+
+#toggler {
+  display: none;
+}
+
+.fa-bars {
+  font-size: 3rem;
+  color: var(--button-color);
+  cursor: pointer;
+  display: none;
+}
+
+/* cadastro */
+
+.cadastro, .registros-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  margin-top: 5rem;
+  max-width: 800px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+.cadastro h2 {
+  font-size: 3.2rem; /* Aumenta o tamanho da fonte */
+  font-weight: bold; /* Define o peso da fonte como bold */
+  color: var(--text-color);
+  margin-bottom: 3rem;
+  text-align: center;
+  text-transform: uppercase; /* Transforma o texto em maiúsculas */
+  letter-spacing: 0.1rem; /* Adiciona espaçamento entre as letras */
+  border-bottom: 2px solid var(--button-color); /* Adiciona uma borda inferior */
+  display: inline-block; /* Define o display como inline-block */
+  padding-bottom: 0.5rem; /* Adiciona padding inferior */
+}
+
+
+.cadastro form, .clientes-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cadastro form label {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.cadastro form input,
+.cadastro form select {
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.cadastro form button {
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: var(--button-color);
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.cadastro form button:hover {
+  background:var(--button-hover-color);
+}
+
+.cliente {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.cliente p {
+  font-size: 1.5rem;
+  color:var(--text-color);
+}
+
+.cliente button {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  background: var(--button-color);
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.cliente button:hover {
+  background: var(--button-hover-color);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+form label {
+    grid-column: span 2;
+}
+
+form input, form select {
+    grid-column: span 2;
+}
+
+form button {
+    grid-column: span 2;
+}
+
+
+
+@media (max-width: 768px) {
+  .fa-bars {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background: #eee;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  #toggler:checked ~ .navbar {
+    display: flex;
+  }
+}
+
